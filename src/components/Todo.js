@@ -40,7 +40,7 @@ setAlltodo(filterTodo)
     <>
    <div className='container'>
 <div className='row'>
-<div className='col-7 mx-auto shadow'>
+<div className='col-lg-5 col-sm-8 mx-auto shadow'>
 <h1>My Todo</h1>
     <input type="text" placeholder="Enter Your Todo" className="form-control my-2" onChange={(e)=>setTodoName(e.target.value)} value={todoName}/>
         <button className="btn btn-warning w-100" onClick={addTodo}>Add Todo</button>
@@ -48,7 +48,7 @@ setAlltodo(filterTodo)
 </div>
    </div>
 
-   <div className='col-5 mx-auto  justify-content-center'>
+   <div className='col-lg-5 mx-auto  justify-content-center'>
 
      <div className='fs-3'> You have {count} pending task(s)</div>
      {
