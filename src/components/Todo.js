@@ -40,26 +40,27 @@ setAlltodo(filterTodo)
     <>
    <div className='container'>
 <div className='row'>
-<div className='col-lg-5 col-sm-8 mx-auto shadow'>
-<h1>My Todo</h1>
+<div className='mt-3'>
+<h1 className='text-light'>To-Do List</h1>
+<div className='col-lg-5 col-sm-8 mx-auto d-flex bg-light py-2 px-3 shadow fool align-items-center'>
     <input type="text" placeholder="Enter Your Todo" className="form-control my-2" onChange={(e)=>setTodoName(e.target.value)} value={todoName}/>
-        <button className="btn btn-warning w-100" onClick={addTodo}>Add Todo</button>
+        <button className="btn w-25 bt text-light ms-2" onClick={addTodo}>ADD</button>
 </div>
 </div>
-   </div>
+</div>
+   
 
-   <div className='col-lg-5 mx-auto  justify-content-center'>
+     <div className='fs-4 text-light'> You have {count} pending task(s)</div>
+   <div className='col-lg-6 mx-auto  justify-content-center bg-light py-3 px-5  mt-4 disp'>
 
-     <div className='fs-3'> You have {count} pending task(s)</div>
      {
         allTodo.map((today,index)=>(
             <>
-            <div className=' my-2 py-2 d-flex'>
-                <h6 className='col-5 mt-1'>{today.todoName}</h6>
-                <div className='col-6'>
-                  <button className='btn bg-danger mx-1' onClick={()=>delTodo(index)}>Delete</button>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                  className="btn btn-warning mx-2" onClick={()=>editTodo(index)}>Edit</button>
+            <div className=' my-3 d-flex justify-content-between id '>
+                <h6 className='mt-1'>{today.todoName}</h6>
+                <div className=''>
+                  <i class="fa fa-trash me-2 fs-4 text-danger" aria-hidden="true" onClick={()=>delTodo(index)}></i>
+                  <i className="fa fa-pencil ms-2 fs-4" type="button" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>editTodo(index)}></i>
                 </div>
             </div>
            
@@ -91,7 +92,7 @@ setAlltodo(filterTodo)
       }
     
    </div>
-   
+   </div>
     </>
   )
 }
